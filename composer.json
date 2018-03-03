@@ -1,6 +1,7 @@
 {
-  "name": "deefaze/startless",
-  "description": "Less/CSS Starting Bloc for any web project",
-  "require": {
-  }  
+    "name": "deefaze/startless",
+    "description": "Startless - Less starting bloc for any projects",
+    "type": "library",
+    "minimum-stability": "dev",
+    "require": {}
 }
