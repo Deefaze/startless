@@ -1,8 +1,24 @@
 {
-    "name": "deefaze/startless",
-    "description": "Startless - Less starting bloc for any projects",
-    "type": "library",
-    "minimum-stability": "dev",
-    "version": "1.0.0",
-    "require": {}
+  "name": "deefaze/startless",
+  "description": "Startless - Less starting bloc for any projects",
+  "type": "library",
+  "config": {
+    "vendor-dir": "assets"
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "startless",
+        "version": "1.0.0",
+        "dist": {
+          "url": "https://github.com/Deefaze/startless/archive/master.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ],
+  "require": {
+      "deefaze/startless": "dev-master"
+  }  
 }

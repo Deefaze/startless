@@ -16,9 +16,11 @@ Fonts theme base on some of Google Fonts like Roboto, Lato, Ubuntu, Oswald...
 
 # 1. Installation
 
-## 1.1 
+## 1.1 Composer installation
+
+run this `composer` command in your `terminal` :
 ```console
-deefaze/startless
+composer require deefaze/startless dev-master
 ```
 
 ## 1.2 Locate main CSS file
@@ -28,10 +30,10 @@ You can use `-my-*\*.less` files for your own less interfaces or rules.
 
 ## 1.3 Add in your project
 
-Example :
+Modify and compile *.less `(main is styles.less)`, and use `styles.css` like :
 ```html
 <head>
-  <link type="text/css" rel="stylesheet" href="vendor/deefaze/startless/src/css/styles.css">
+  <link type="text/css" rel="stylesheet" href="vendor/deefaze/startless/css/styles.css">
 </head>
 ```
 
