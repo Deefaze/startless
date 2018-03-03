@@ -3,22 +3,12 @@
 
 // INTERFACES
 
-@import 'interfaces/functions.less';
-@import '-my-interfaces/functions.less';
-
-@import 'interfaces/themes-colors.less';
-@import '-my-interfaces/themes-colors.less';
-
-@import 'interfaces/themes-fonts.less';
-@import '-my-interfaces/themes-fonts.less';
-
-@import 'interfaces/vars.less';
-@import '-my-interfaces/vars.less';
+@import 'interfaces/functions.less';      // after + -my-interfaces.functions
+@import 'interfaces/themes-colors.less';  // after + -my-interfaces.themes-colors
+@import 'interfaces/themes-fonts.less';   // after + -my-interfaces.themes-fonts
+@import 'interfaces/vars.less';           // after + -my-interfaces.vars
 
 // RULES
-@import 'rules/reset.less';
-@import '-my-rules/reset.less';
-@import 'rules/normalize.less';
-@import '-my-rules/normalize.less';
-@import 'rules/root.less';
-@import '-my-rules/root.less';
+@import 'rules/reset.less';     // after + -my-rules.reset
+@import 'rules/normalize.less'; // after + -my-rules.normalize
+@import 'rules/root.less';      // after + -my-rules.root
