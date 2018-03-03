@@ -3,5 +3,6 @@
     "description": "Startless - Less starting bloc for any projects",
     "type": "library",
     "minimum-stability": "dev",
+    "version": "1.0.0",
     "require": {}
 }
