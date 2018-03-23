@@ -5,7 +5,7 @@
 [1. installation](#1-installation)
 > [1.1 Composer](#11-composer)\
 > [1.2 or Download](#12-or-download)\
-> [1.3 View reference page](#13-loading-reference-page)
+> [1.3 View reference page](#13-view-reference-page)
 
 [2. Usage @ Dev](#2-usage--dev)
 > [2.1 Locate main Less file](#21-locate-main-less-file)\
