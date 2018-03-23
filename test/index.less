@@ -1,0 +1,195 @@
+// out: index.css, compress:false, sourcemap: false
+*[demo],
+{
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
+}
+
+nav[demo]
+{
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  bottom: 0;
+  padding: 1rem 0;
+  background-color:#3e4451;
+  color:#9da5b4;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+  z-index: 2;
+  menu
+  {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  label
+  {
+    margin: 0.2rem;
+    margin-top: 0.8rem;
+    color: #828997;
+    font-weight: 600;
+    text-transform: capitalize;
+    &::before
+    {
+      content: "\25b9";
+      padding-right: 0.2rem;
+    }
+  }
+  a
+  {
+    text-decoration: none;
+    color: #abb2bf;
+    display: block;
+    margin: 0.2rem 0.2rem 0.2rem 1.3rem;
+
+    &:hover
+    {
+      color: #6cd2e0;
+    }
+
+    &.active,
+    {
+      color: #e06c75;
+    }
+  }
+}
+
+content[demo]
+{
+  display: block;
+  position: absolute;
+  left: 280px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+label[demo]
+{
+  display: block;
+  color: #5c6370;
+  background-color: rgba(92,99,112,0.02);
+  font-weight: 600;
+  font-size: 2em;
+  padding: 0.5rem;
+  margin: 3rem 1.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid #9da5b4;
+
+  &:target
+  {
+    color:#e06c75;
+  }
+
+  &::before
+  {
+    content: ". ";
+  }
+
+  &.active
+  {
+    color: #e06c75;
+  }
+}
+
+section[demo]
+{
+  margin: 0 3rem;
+  min-height: 100px;
+  &:last-child
+  {
+    margin-bottom: 40em;
+  }
+  hr
+  {
+    display: block;
+    height: 1px;
+    border:none;
+    background-color: lighten(#abb2bf, 20%);
+    margin: 1.5rem 10rem;
+  }
+  code[demo]
+  {
+    display: block;
+    background-color: #3e4451;
+    color: #abb2bf;
+    font-family: 'Ubuntu Mono', 'Roboto Mono', 'Segoe UI', 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 10pt;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    hr
+    {
+      display: inline-block;
+      width: 1em;
+      margin: 0;
+      color: transparent;
+      background: transparent;
+      clear: none;
+    }
+  }
+  c-
+  {
+    &c
+    {
+      color: #eff0ff;
+      font-style: italic;
+      font-weight: 300;
+    }
+    &i
+    {
+      color: #4b7fd2;
+      font-weight: 500;
+      font-family: monospace;
+    }
+    &a
+    {
+      color: #e69951;
+      font-weight: 500;
+    }
+    &av
+    {
+      color: #77b649;
+      font-weight: 300;
+    }
+    &v
+    {
+      color: #be5046;
+      font-weight: 500;
+    }
+    &ot
+    {
+      color: #be5046;
+      font-weight: 500;
+      &::before
+      {
+        content:"\3c";
+        color:#9da5b4;
+      }
+      &::after
+      {
+        content:"\3e";
+        color:#9da5b4;
+      }
+    }
+    &ct
+    {
+      color: #be5046;
+      font-weight: 500;
+      &::before
+      {
+        content:"\3c\2f";
+        color:#9da5b4;
+      }
+      &::after
+      {
+        content:"\3e";
+        color:#9da5b4;
+      }
+    }
+  }
+}

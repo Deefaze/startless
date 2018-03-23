@@ -1,0 +1,23 @@
+// out: ../css/styles.css, compress: false, sourcemap: false
+
+// PARAMETERS
+@import 'config/config.less';
+
+// THEME
+  @import 'components/themes/themes.@{theme-selector}.less';
+  @import 'components/themes.less';
+
+// FONT
+  @import 'components/fonts/fonts.@{font-selector}.less';
+  @import 'components/fonts.less';
+
+// RESET
+@import 'components/reset.less';
+
+// NORMALIZE
+@import 'components/normalize.less';
+
+// CSS
+@import 'public/root.less';
+@import 'public/document.less';
+@import 'public/fonts.less';

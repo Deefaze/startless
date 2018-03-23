@@ -1,10 +1,8 @@
 # StartLess
 
-# **&otimes; WARN [UNDERCONSTRUCTION]: DO NOT USE FOR THE MOMENT &otimes;**
-
 ## What is StartLess ?
 
-Startless is a Less/Css starting bloc for any Html/CSS web application. Startless include base of css reset,normalization, fonts and colors theme.
+Startless is a Less/Css starting bloc for any Html/CSS web application. Startless include base of css reset, normalization, fonts and colors theme.
 
 ## What StartLess use ?
 
@@ -33,34 +31,6 @@ You can use `-my-*\*.less` files for your own less interfaces or rules.
 Modify and compile *.less `(main is styles.less)`, and use `styles.css` like :
 ```html
 <head>
-  <link type="text/css" rel="stylesheet" href="vendor/deefaze/startless/css/styles.css">
+  <link type="text/css" rel="stylesheet" href="vendor/deefaze/startless/src/css/styles.css">
 </head>
 ```
-
---------------------
-
-# 2. Usage
-
-## 2.1 Fonts themes
-&emsp;&xmap; _{interfaces/themes-fonts.less}_
-
-## 2.2 Colors themes 
-&emsp;&xmap; _{interfaces/themes-colors.less}_
-
---------------------
-
-# 3. Less references
-
-## 3.1 Variables
-
-## 3.2 Functions
-
-## 3.3 Reset
-
-## 3.4 Normalize
-
---------------------
-
-# 4. Css references
-
-## 4.1 :root

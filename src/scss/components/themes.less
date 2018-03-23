@@ -1,0 +1,47 @@
+// main: ../styles.less
+
+// full color
+@--ct-black   : extract(@--theme, 1);
+@--ct-white   : extract(@--theme, 2);
+@--ct-gray    : extract(@--theme, 3);
+@--ct-red     : extract(@--theme, 4);
+@--ct-orange  : extract(@--theme, 5);
+@--ct-yellow  : extract(@--theme, 6);
+@--ct-green   : extract(@--theme, 7);
+@--ct-teal    : extract(@--theme, 8);
+@--ct-blue    : extract(@--theme, 9);
+@--ct-violet  : extract(@--theme, 10);
+@--ct-purple  : extract(@--theme, 11);
+@--ct-fushia  : extract(@--theme, 12);
+@--ct-crimson : extract(@--theme, 13);
+
+// light color
+@theme-light-ratio: extract(@--theme, 15);
+  @--ct-black-l  : lighten(@--ct-black,   @theme-light-ratio);
+  @--ct-gray-l   : lighten(@--ct-gray,    @theme-light-ratio);
+  @--ct-red-l    : lighten(@--ct-red,     @theme-light-ratio);
+  @--ct-orange-l : lighten(@--ct-orange,  @theme-light-ratio);
+  @--ct-yellow-l : lighten(@--ct-yellow,  @theme-light-ratio);
+  @--ct-green-l  : lighten(@--ct-green,   @theme-light-ratio);
+  @--ct-teal-l   : lighten(@--ct-teal,    @theme-light-ratio);
+  @--ct-blue-l   : lighten(@--ct-blue,    @theme-light-ratio);
+  @--ct-violet-l : lighten(@--ct-violet,  @theme-light-ratio);
+  @--ct-purple-l : lighten(@--ct-purple,  @theme-light-ratio);
+  @--ct-fushia-l : lighten(@--ct-fushia,  @theme-light-ratio);
+  @--ct-crimson-l: lighten(@--ct-crimson, @theme-light-ratio);
+
+// dark color
+@theme-dark-ratio : extract(@--theme, 14);
+  @--ct-white-d  : darken(@--ct-white,    @theme-dark-ratio);
+  @--ct-gray-d   : darken(@--ct-gray,     @theme-dark-ratio);
+  @--ct-red-d    : darken(@--ct-red,      @theme-dark-ratio);
+  @--ct-orange-d : darken(@--ct-orange,   @theme-dark-ratio);
+  @--ct-yellow-d : darken(@--ct-yellow,   @theme-dark-ratio);
+  @--ct-green-d  : darken(@--ct-green,    @theme-dark-ratio);
+  @--ct-teal-d   : darken(@--ct-teal,     @theme-dark-ratio);
+  @--ct-blue-d   : darken(@--ct-blue,     @theme-dark-ratio);
+  @--ct-violet-d : darken(@--ct-violet,   @theme-dark-ratio);
+  @--ct-purple-d : darken(@--ct-purple,   @theme-dark-ratio);
+  @--ct-fushia-d : darken(@--ct-fushia,   @theme-dark-ratio);
+  @--ct-crimson-d: darken(@--ct-crimson,  @theme-dark-ratio);
+

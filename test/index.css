@@ -1,0 +1,153 @@
+*[demo] {
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
+}
+nav[demo] {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  bottom: 0;
+  padding: 1rem 0;
+  background-color: #3e4451;
+  color: #9da5b4;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+nav[demo] menu {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+nav[demo] label {
+  margin: 0.2rem;
+  margin-top: 0.8rem;
+  color: #828997;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+nav[demo] label::before {
+  content: "\25b9";
+  padding-right: 0.2rem;
+}
+nav[demo] a {
+  text-decoration: none;
+  color: #abb2bf;
+  display: block;
+  margin: 0.2rem 0.2rem 0.2rem 1.3rem;
+}
+nav[demo] a:hover {
+  color: #6cd2e0;
+}
+nav[demo] a.active {
+  color: #e06c75;
+}
+content[demo] {
+  display: block;
+  position: absolute;
+  left: 280px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+label[demo] {
+  display: block;
+  color: #5c6370;
+  background-color: rgba(92, 99, 112, 0.02);
+  font-weight: 600;
+  font-size: 2em;
+  padding: 0.5rem;
+  margin: 3rem 1.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid #9da5b4;
+}
+label[demo]:target {
+  color: #e06c75;
+}
+label[demo]::before {
+  content: ". ";
+}
+label[demo].active {
+  color: #e06c75;
+}
+section[demo] {
+  margin: 0 3rem;
+  min-height: 100px;
+}
+section[demo]:last-child {
+  margin-bottom: 40em;
+}
+section[demo] hr {
+  display: block;
+  height: 1px;
+  border: none;
+  background-color: #e5e7eb;
+  margin: 1.5rem 10rem;
+}
+section[demo] code[demo] {
+  display: block;
+  background-color: #3e4451;
+  color: #abb2bf;
+  font-family: 'Ubuntu Mono', 'Roboto Mono', 'Segoe UI', 'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-size: 10pt;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+section[demo] code[demo] hr {
+  display: inline-block;
+  width: 1em;
+  margin: 0;
+  color: transparent;
+  background: transparent;
+  clear: none;
+}
+section[demo] c-c {
+  color: #eff0ff;
+  font-style: italic;
+  font-weight: 300;
+}
+section[demo] c-i {
+  color: #4b7fd2;
+  font-weight: 500;
+  font-family: monospace;
+}
+section[demo] c-a {
+  color: #e69951;
+  font-weight: 500;
+}
+section[demo] c-av {
+  color: #77b649;
+  font-weight: 300;
+}
+section[demo] c-v {
+  color: #be5046;
+  font-weight: 500;
+}
+section[demo] c-ot {
+  color: #be5046;
+  font-weight: 500;
+}
+section[demo] c-ot::before {
+  content: "\3c";
+  color: #9da5b4;
+}
+section[demo] c-ot::after {
+  content: "\3e";
+  color: #9da5b4;
+}
+section[demo] c-ct {
+  color: #be5046;
+  font-weight: 500;
+}
+section[demo] c-ct::before {
+  content: "\3c\2f";
+  color: #9da5b4;
+}
+section[demo] c-ct::after {
+  content: "\3e";
+  color: #9da5b4;
+}

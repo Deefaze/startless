@@ -1,5 +1,4 @@
-/vendor
-/css/styles.css
+/src/css/styles.css
 /_config.yml
 /vendor/autoload.php
 /vendor/composer

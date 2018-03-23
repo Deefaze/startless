@@ -1,24 +1,115 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link type="text/css" rel="stylesheet" href="../src/css/styles.css">
-  </head>
-  <body>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
 
-    <a href="#">Simple link</a>
+  <link rel="stylesheet" type="text/css" href="../src/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
 
-    <p>Paragraphe text</p>
+</head>
+<body>
 
-    <button>Button</button>
-    <input type="button" value="Input Button">
-  </body>
+<nav demo>
+  <menu id="group-main">
+    <label>Main</label>
+    <a href="#installation">installation</a>
+    <a href="#configuration">configuration</a>
+    <a href="#usage">usage</a>
+  </menu>
+  <menu id="group-theming">
+    <label>Theming</label>
+    <a href="#themes-scheme">theme scheme</a>
+    <a href="#fonts-scheme">fonts scheme</a>
+  </menu>
+  <menu id="group-fonts">
+    <label>fonts</label>
+    <a href="#fonts-heading">heading</a>
+    <a href="#fonts-text">text</a>
+    <a href="#fonts-code">code</a>
+  </menu>
+</nav>
+
+<content demo>
+  <label demo id="installation" group="main">installation</label><section demo id="s-installation" include="installation"></section>
+
+  <label demo id="configuration" group="main">configuration</label><section demo id="s-configuration" include="configuration"></section>
+
+  <label demo id="usage" group="main">usage</label><section demo id="s-usage" include="usage"></section>
+
+  <label demo id="themes-scheme" group="theming">themes scheme</label><section demo id="s-themes-scheme" include="themes-scheme"></section>
+
+  <label demo id="fonts-scheme" group="theming">fonts scheme</label><section demo id="s-fonts-scheme" include="fonts-scheme"></section>
+
+  <label demo id="fonts-heading" group="fonts">heading</label><section demo id="s-fonts-heading" include="fonts-heading"></section>
+  
+  <label demo id="fonts-text" group="fonts">text</label><section demo id="s-fonts-text" include="fonts-text"></section>
+
+  <label demo id="fonts-code" group="fonts">code</label><section demo id="s-fonts-code" include="fonts-code"></section>
+</content>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="pages.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+  includeHTML();
+
+
+  $('[demo] a[href^="#"]').bind('click.smoothscroll', function (e) {
+    e.preventDefault();
+    var target = this.hash,
+      $target = $(target);
+
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top - 40
+    }, 900, 'swing', function () {
+      window.location.hash = target;
+    });
+  });
+
+  $('nav[demo] a').on('click', function(){
+    $('nav[demo] a.active').removeClass('active');
+    $(this).addClass('active');
+  });
+
+    var $sections    = $('content[demo] label[demo]');
+    //var $firstAnchor = $('content[demo] label[demo]:first-child').offset().top;
+    var $oldSection = null; 
+  $(window).scroll(function () {
+    var $carretPos  = $(this).scrollTop();
+
+    if( $carretPos-1 >= 0)
+    {
+      $sections.each(function ()
+      {
+        var $anchorId = $(this).attr('id');
+        var $sectionId = '#s-' + $anchorId;
+        var $Y1 = Math.max(0, $(this).offset().top - 85);
+        var $Y2 = Math.max(0, $($sectionId).offset().top + $($sectionId).height() - 85);
+
+        if ($carretPos >= $Y1 && $carretPos <= $Y2 && $anchorId != $oldSection) 
+        {
+          console.log( 'y1: ', $Y1, ' y2: ', $Y2, ' id: ', $anchorId );
+          $oldSection = $anchorId;
+          $('nav[demo] a.active').removeClass('active');
+          $('label[demo].active').removeClass('active');
+
+          $('nav[demo] a[href="#' + $anchorId + '"]').addClass('active');
+          $('#' + $anchorId).addClass('active');
+          return void(0);
+        }
+      });
+    }
+  });
+   
+});
+</script>
+</body>
 </html>
