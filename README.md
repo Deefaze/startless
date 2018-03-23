@@ -4,7 +4,8 @@
 
 [1. installation](#1-installation)
 > [1.1 Composer](#11-composer)\
-> [1.2 or Download](#12-or-download)
+> [1.2 or Download](#12-or-download)\
+> [1.3 View reference page](#13-loading-reference-page)
 
 [2. Usage @ Dev](#2-usage--dev)
 > [2.1 Locate main Less file](#21-locate-main-less-file)\
@@ -42,6 +43,28 @@ composer require deefaze/startless dev-master
 
 Go to [Deefaze/starless](https://github.com/Deefaze/startless) repo, select `master` branch and click `Clone or download` > `Download ZIP` or just [Click here](https://github.com/Deefaze/startless/archive/master.zip).
 
+## 1.3 View reference page
+
+The `test/index.html` cannot be called directly from `file:///` protocol, launch from your own server. 
+
+Starless provide a script for create a PHP Server on 127.0.0.254:80.
+
+Go to Startless root path, open a terminal (CMD on Windows) and run `win-php-server.cmd` (NB: require a valid PHP > v5.3 installation), this launch automaticaly the index in your browser. 
+If not, go to [http://127.0.0.254:80/test/index.html](http://127.0.0.254:80/test/index.html)
+
+Other terminal in your editor ? You can launch CMD into your current terminal (terminalception), run like this :
+```console
+dev@dev-PC MINGW64 /s/www/startless/ (master)
+$ cmd /k
+```
+next, run `win-php-server.cmd` from CMD :
+```console
+Microsoft Windows [version 10]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+S:\www\startless\win-php-server.cmd
+```
+Return to your terminal ? run `exit` from CMD.
 
 ___
 &mapstoup;  [Return to TOC](#table-of-content)
