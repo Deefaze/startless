@@ -1,5 +1,21 @@
 # StartLess
 
+## Table of content
+
+[1. installation](#)
+> [1.1 Composer](#)\
+> [1.2 or Download](#)
+
+[2. Usage @ Dev](#)
+> [2.1 Locate main Less file](#)\
+> [2.2 Configuration](#)\
+> [2.3 Compress CSS / Sourcemap](#)\
+> [2.4 LESS Mixins](#)\
+> [2.5 CSS Rules](#)
+
+[3. Usage @ Production](#)
+___
+
 ## What is StartLess ?
 
 Startless is a Less/Css starting bloc for any Html/CSS web application. Startless include base of css reset, normalization, fonts and colors theme.
@@ -14,13 +30,14 @@ ___
 
 # 1. Installation
 
-## 1.1 Composer installation
+## 1.1 Composer
 
 Run this `composer` command in your `terminal` :
 ```console
 composer require deefaze/startless dev-master
 ```
-## 1.2 GitHub download ZIP
+
+## 1.2 or Download
 
 Go to [Deefaze/starless](https://github.com/Deefaze/startless) repo, select `master` branch and click `Clone or download` > `Download ZIP` or just [Click here](https://github.com/Deefaze/startless/archive/master.zip).
 
@@ -30,7 +47,7 @@ ___
 
 ## 2.1 Locate main LESS file
 
-The main file is `src/scss/styles.less`. But this, contain only `@import` directives. `src/scss/Public/` folder is more [interesting](2.5).
+The main file is `src/scss/styles.less`. But this, contain only `@import` directives. `src/scss/Public/` folder is more [interesting](#25-scsspublic).
 
 ## 2.2 Configuration
 
@@ -52,7 +69,7 @@ If you use a less compiler  who support first line parameter like :
 ```
 You just need to set `compress` or `sourcemap` to `true/false`. 
 
-## 2.4 Scss/Components
+## 2.4 LESS Mixins
 
 `components/` contain Less mixins, themes, fonts, no CSS rules here ...
 
@@ -62,7 +79,7 @@ You just need to set `compress` or `sourcemap` to `true/false`.
 `components/fonts/` contain all fonts configurations, you can add yours here.\
 `components/fonts.less` Startless fonts core file.
 
-## 2.5 Scss/Public
+## 2.5 CSS Rules
 
 `public\` contain all CSS rules. Put yours here. This already contain a
 basic reset and normalizer, root (`:root{}`) variables, document parameters ...
