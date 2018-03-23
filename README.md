@@ -2,18 +2,19 @@
 
 ## Table of content
 
-[1. installation](#)
-> [1.1 Composer](#)\
-> [1.2 or Download](#)
+[1. installation](#1-installation)
+> [1.1 Composer](#11-composer)\
+> [1.2 or Download](#12-or-download)
 
-[2. Usage @ Dev](#)
-> [2.1 Locate main Less file](#)\
-> [2.2 Configuration](#)\
-> [2.3 Compress CSS / Sourcemap](#)\
-> [2.4 LESS Mixins](#)\
-> [2.5 CSS Rules](#)
+[2. Usage @ Dev](#2-usage--dev)
+> [2.1 Locate main Less file](#21-locate-main-less-file)\
+> [2.2 Configuration](#22-configuration)\
+> [2.3 Compress CSS / Sourcemap](#23-compress-css--sourcemap)\
+> [2.4 LESS Mixins](#24-less-mixins)\
+> [2.5 CSS Rules](#25-css-rules)
 
-[3. Usage @ Production](#)
+[3. Usage @ Production](#3-usage--production)
+
 ___
 
 ## What is StartLess ?
@@ -41,6 +42,9 @@ composer require deefaze/startless dev-master
 
 Go to [Deefaze/starless](https://github.com/Deefaze/startless) repo, select `master` branch and click `Clone or download` > `Download ZIP` or just [Click here](https://github.com/Deefaze/startless/archive/master.zip).
 
+
+___
+&mapstoup;  [Return to TOC](#table-of-content)
 ___
 
 # 2. Usage @ Dev
@@ -85,6 +89,8 @@ You just need to set `compress` or `sourcemap` to `true/false`.
 basic reset and normalizer, root (`:root{}`) variables, document parameters ...
 
 ___
+&mapstoup;  [Return to TOC](#table-of-content)
+___
 
 # 3. Usage @ Production
 
@@ -100,4 +106,6 @@ NB : On standard production, startless is not needed, you can deploy only `css/s
 ```less
 // out: ../../../../../assets/css/styles.css, compress: true, sourcemap: false
 ```
-
+___
+&mapstoup;  [Return to TOC](#table-of-content)
+___
