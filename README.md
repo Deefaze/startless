@@ -74,7 +74,7 @@ ___
 
 ## 2.1 Locate main LESS file
 
-The main file is `src/scss/styles.less`. But this, contain only `@import` directives. `src/scss/Public/` folder is more [interesting](#25-scsspublic).
+The main file is `src/scss/main.less`. But this, contain only `@import` directives. `src/scss/Public/` folder is more [interesting](#25-scsspublic).
 
 ## 2.2 Configuration
 
@@ -89,7 +89,7 @@ The main file is `src/scss/styles.less`. But this, contain only `@import` direct
 
 ## 2.3 Compress CSS / Sourcemap
 
-This is localized into `scss/styles.less` file.\
+This is localized into `scss/main.less` file.\
 If you use a less compiler  who support first line parameter like :
 ```less
 // out: ../css/styles.css, compress: false, sourcemap: false
@@ -117,7 +117,7 @@ ___
 
 # 3. Usage @ Production
 
-Compile `scss/styles.less` and use `css/styles.css` in your project, like :
+Compile `scss/main.less` and use `css/styles.css` in your project, like :
 ```html
 <head>
   { ... }
@@ -125,7 +125,7 @@ Compile `scss/styles.less` and use `css/styles.css` in your project, like :
   { ... }
 </head>
 ```
-NB : On standard production, startless is not needed, you can deploy only `css/styles.css` file in your assets or configure the `out` file parameter in `styles.less` for targeting the `assets/css` folder, example :
+NB : On standard production, startless is not needed, you can deploy only `css/styles.css` file in your assets or configure the `out` file parameter in `main.less` for targeting the `assets/css` folder, example :
 ```less
 // out: ../../../../../assets/css/styles.css, compress: true, sourcemap: false
 ```
