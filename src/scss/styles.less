@@ -4,20 +4,25 @@
 @import 'config/config.less';
 
 // THEME
-  @import 'components/themes/themes.@{theme-selector}.less';
+  @import 'components/themes/themes.@{THEME-COLORS-NAME}.less';
   @import 'components/themes.less';
 
 // FONT
-  @import 'components/fonts/fonts.@{font-selector}.less';
+  @import 'components/fonts/fonts.@{THEME-FONTS-NAME}.less';
   @import 'components/fonts.less';
 
+// ICONS
+  .if-use-fa()  when ( @ICONS-USE-FA  = 1 ) { @import "components/icons/icons.fa.less";  :root{ --icons-set-fa: 1; } }.if-use-fa();
+  .if-use-mdi() when ( @ICONS-USE-MDI = 1 ) { @import "components/icons/icons.mdi.less"; :root{ --icons-set-mdi: 1; } }.if-use-mdi();
+  .if-use-ion() when ( @ICONS-USE-ION = 1 ) { @import "components/icons/icons.ion.less"; :root{ --icons-set-ion: 1; } }.if-use-ion();
+
 // RESET
-@import 'public/reset.less';
+  .if-use-reset() when ( @BROWSER-RESET = 1 ) { @import 'public/reset.less'; :root{ --browser-reset: 1; } }.if-use-reset();
 
 // NORMALIZE
-@import 'public/normalize.less';
+  .if-use-normalize() when ( @BROWSER-NORMALIZE = 1 ) { @import 'public/normalize.less'; :root{ --browser-normalize: 1; } }.if-use-normalize();
 
-// CSS
-@import 'public/root.less';
-@import 'public/document.less';
-@import 'public/fonts.less';
+// PUBLIC CSS RULES
+  @import 'public/root.less';
+  @import 'public/document.less';
+  @import 'public/fonts.less';

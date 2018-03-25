@@ -56,6 +56,10 @@
 <script src="assets/js/pages.js"></script>
 
 <script>
+$.rootVar = function(aVarName)
+{
+  return $(':root').css('--' + aVarName);
+}
 
 $(document).ready(function(){
 
@@ -95,7 +99,6 @@ $(document).ready(function(){
 
         if ($carretPos >= $Y1 && $carretPos <= $Y2 && $anchorId != $oldSection) 
         {
-          console.log( 'y1: ', $Y1, ' y2: ', $Y2, ' id: ', $anchorId );
           $oldSection = $anchorId;
           $('nav[demo] a.active').removeClass('active');
           $('label[demo].active').removeClass('active');
@@ -107,7 +110,12 @@ $(document).ready(function(){
       });
     }
   });
-   
+
+  if( $.rootVar('browser-reset')     == 1 ) { $('body').addClass('resetized'); }
+  if( $.rootVar('browser-normalize') == 1 ) { $('body').addClass('normalized'); }
+  if( $.rootVar('icons-set-fa')      == 1 ) { $('body').addClass('awesomized'); }
+  if( $.rootVar('icons-set-mdi')     == 1 ) { $('body').addClass('materialized'); }
+  if( $.rootVar('icons-set-ion')     == 1 ) { $('body').addClass('ionicized'); }
 });
 </script>
 </body>
