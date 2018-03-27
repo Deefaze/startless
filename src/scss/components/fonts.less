@@ -1,16 +1,9 @@
 // main: ../main.less
 
-// font family
-@--font-normal  : extract(@--font, 1);
-@--font-heading : extract(@--font, 2);
-@--font-code    : extract(@--font, 3);
+@font-heading-size-1: calc( ~"@font-heading-size   * 1.00" );
+@font-heading-size-2: calc( ~"@font-heading-size-1 * 0.90" );
+@font-heading-size-3: calc( ~"@font-heading-size-2 * 0.90" );
+@font-heading-size-4: calc( ~"@font-heading-size-3 * 0.90" );
+@font-heading-size-5: calc( ~"@font-heading-size-4 * 0.90" );
+@font-heading-size-6: calc( ~"@font-heading-size-5 * 0.90" );
 
-// font size
-@--font-normal-size   : extract(@--font, 4);
-@--font-heading-size  : extract(@--font, 5);
-@--font-code-size     : extract(@--font, 6);
-
-// font weight
-@--font-normal-weight   : extract(@--font, 7);
-@--font-heading-weight  : extract(@--font, 8);
-@--font-code-weight     : extract(@--font, 9);

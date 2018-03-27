@@ -1,0 +1,12 @@
+// main: ../main.less
+
+.LessColorsLoop( @index ) when ( @index > 0 )
+{.LessColorsLoop( @index - 1 );
+  @name: extract( @themes-varnames, @index );
+
+  .cl@{name} { color: var( ~"-@{name}" ); }
+  .bg@{name} { background-color: var( ~"-@{name}" ); }
+  .br@{name} { border-color: var( ~"-@{name}" ); }
+}
+
+.LessColorsLoop( length(@themes-varnames) );

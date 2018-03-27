@@ -1,20 +1,45 @@
 // main: ../../main.less
 
 // THEME COLOR BELLE
-@--theme: 
-  #202224, //1 black 
-  #fafdff, //2 white
-  #808284, //3 gray
-  #913133, //4 red
-  #d16116, //5 orange
-  #ffbb00, //6 yellow
-  #2d882d, //7 green
-  #31867b, //8 teal
-  #366a94, //9 blue
-  #5c2e81, //10 violet
-  #9b2e9b, //11 purple
-  #a7387c, //12 fuschia
-  #c0305b, //13 crimson
-  9%,        // dark ratio
-  9%         // light ratio
-;// end @--theme-colors
+
+// Ratios
+@-r-light:  12%;
+@-r-dark :  12%;
+
+// Bases colors
+@-black  : #313335;
+@-white  : #eff1f3;
+@-silver : #c5c8cc;
+@-gray   : #737577;
+@-graphit: #525355;
+@-red    : #8a1113;
+@-brown  : #774738;
+@-orange : #d66417;
+@-yellow : #ffbb00;
+@-olive  : #68a00f;
+@-green  : #2d882d;
+@-teal   : #1a9274;
+@-cyan   : #14a7ac;
+@-blue   : #366a94;
+@-indigo : #5c2e81;
+@-purple : #9b2e9b;
+@-pink   : #ad6090;
+
+// Elements
+@-primary    : @-blue;
+@-secondary  : @-gray;
+
+@-success    : @-olive;
+@-positive   : @-green;
+
+@-danger     : @-red;
+@-negative   : @-red;
+
+@-alert      : @-orange;
+@-alert-alt  : @-yellow;
+
+@-info       : @-cyan;
+@-info-alt   : @-purple;
+
+@-light      : @-silver;
+@-dark       : @-graphit;
