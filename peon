@@ -14,6 +14,9 @@ case $1 in
   compile)
     source "$dir/.peon/compiless.sh"
   ;;
+  lint)
+    source "$dir/.peon/lesslint.sh"
+  ;;
   *)
     source "$dir/.peon/help.sh"
     exit 1

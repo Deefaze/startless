@@ -12,4 +12,4 @@ lessc -l $_src
 
 eLN
 eWait "Compile..."
-lessc -x -su=on $_src $_tgt
+lessc $_src $_tgt
