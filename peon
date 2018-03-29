@@ -1,0 +1,23 @@
+#!bin/bash
+source "$(dirname $0)/.peon/include.sh"
+
+eHead "StartLess - $1"
+eLN
+
+case $1 in
+  test)
+    source "$dir/.peon/tesst.sh"
+  ;;
+  install)
+    source "$dir/.peon/installess.sh"
+  ;;
+  compile)
+    source "$dir/.peon/compiless.sh"
+  ;;
+  *)
+    source "$dir/.peon/help.sh"
+    exit 1
+esac
+
+eLN
+eHead "Job done."
