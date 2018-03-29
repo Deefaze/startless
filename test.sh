@@ -3,15 +3,20 @@ tput reset
 tput smcup
 tput setaf 4
 
+_local_ip=127.12.127.12
+_local_pt=80
+
+_url=http://$_local_ip:$_local_pt/test/
+
 case $1 in
   linux)
-    x-www-browser http://127.0.0.250:80/test/
+    x-www-browser $_url
     ;;
   osx)
-    open http://127.0.0.250:80/test/
+    open $_url
     ;;
   win)
-    rundll32 url.dll,FileProtocolHandler "http://127.0.0.250:80/test/"
+    rundll32 url.dll,FileProtocolHandler "$_url"
     ;;
   *)
     tput setaf 1
@@ -23,5 +28,5 @@ case $1 in
     tput sgr 0
     exit 1
 esac
-php -S 127.0.0.250:80
+php -S $_local_ip:$_local_pt
 tput sgr 0

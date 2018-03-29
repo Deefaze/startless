@@ -125,10 +125,10 @@ Compile `scss/main.less` and use `css/styles.css` in your project, like :
   { ... }
 </head>
 ```
-NB : On standard production, startless is not needed, you can deploy only `css/styles.css` file in your assets or configure the `out` file parameter in `main.less` for targeting the `assets/css` folder, example :
-```less
-// out: ../../../../../assets/css/styles.css, compress: true, sourcemap: false
-```
+NB : On standard production, startless is not needed, you can deploy CSS in any ways : 
+1. copy `css/styles.css` file in your assets...
+2. set the `out` parameter in `main.less` for targeting your assets...
+3. use `lessc` in terminal (require [npm](https://nodejs.org/en/) + [less](http://lesscss.org/) installation) and compile to your assets...
 ___
 &mapstoup;  [Return to TOC](#table-of-content)
 ___
