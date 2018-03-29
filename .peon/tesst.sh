@@ -25,7 +25,7 @@ case $2 in
     eDesc "For Linux   " "  $ sh peon test linux"
     eDesc "For OSx     " "  $ sh peon test osx"
     eDesc "For Windows " "  $ sh peon test win"
-    exit 1
+    eXit
 esac
 
 eLN

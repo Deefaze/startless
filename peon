@@ -5,6 +5,22 @@ eHead "StartLess - $1"
 eLN
 
 case $1 in
+  version*)
+    case $1 in
+      version:create)
+        source "$dir/.peon/version-create.sh"
+      ;;
+      version:inc)
+        source "$dir/.peon/version-inc.sh"
+      ;;
+      version:set)
+        source "$dir/.peon/version-set.sh"
+      ;;
+      *)
+        source "$dir/.peon/version.sh"
+      ;;
+    esac
+  ;;
   test)
     source "$dir/.peon/tesst.sh"
   ;;
@@ -19,7 +35,6 @@ case $1 in
   ;;
   *)
     source "$dir/.peon/help.sh"
-    exit 1
 esac
 
 eLN
