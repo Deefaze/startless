@@ -1,0 +1,39 @@
+#!bin/bash
+source "$(dirname $0)/.peon/init.sh"
+
+eHead "Peon for StartLess"
+
+#case $1 in
+#  version*)
+#    case $1 in
+#      version:create)
+#        source "$dir/.peon/version-create.sh"
+#      ;;
+#      version:inc)
+#        source "$dir/.peon/version-inc.sh"
+#      ;;
+#      version:set)
+#        source "$dir/.peon/version-set.sh"
+#      ;;
+#      *)
+#        source "$dir/.peon/version.sh"
+#      ;;
+#    esac
+#  ;;
+#  test)
+#    source "$dir/.peon/tesst.sh"
+#  ;;
+#  install)
+#    source "$dir/.peon/installess.sh"
+#  ;;
+#  compile)
+#    source "$dir/.peon/compiless.sh"
+#  ;;
+#  lint)
+#    source "$dir/.peon/lesslint.sh"
+#  ;;
+#  *)
+#    source "$dir/.peon/help.sh"
+#esac
+
+eDone
