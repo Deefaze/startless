@@ -51,6 +51,7 @@ case $1 in
     done
   ;;
   *)
+    peonTest
 esac
 
 # Show footer

@@ -137,6 +137,12 @@ function peonRegisterHelp()
   HELP_FOO[ ${#HELP_FOO[@]} + 1 ]=$2
 }
 
+function peonTest()
+{
+  echo -e "$E_CG Me not that kind of Orc !$E_RZ"
+  eXit
+}
+
 peonRegisterDevHelp "list" "peonDevHelpUnitsList"
 peonRegisterDevHelp "" "peonDevHelp"
 peonRegisterDevHelp "peon" "peonDevHelp"
@@ -144,3 +150,4 @@ peonRegisterDevHelp "peon" "peonDevHelp"
 peonRegisterHelp "list" "peonHelpUnitsList"
 peonRegisterHelp "" "peonHelp"
 peonRegisterHelp "peon" "peonHelp"
+
