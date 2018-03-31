@@ -17,15 +17,41 @@
 # test for parameters
   if [ $# -le 0 ] || [ $# -gt 9 ]
   then
-    eDesc "$ sh peon help" "Showing peon Help."
-    peonAstBadParam "peon" $# 1 9 
+    eBash "help" "showing Peon help."
+    eXit 
   fi
 
 # TOOLS :
   peonIncl "f.version"
-  peonTool "f.npm"
-  peonTool "f.lessc"
+  #peonTool "f.npm"
+  #peonTool "f.lessc"
 # TOOLS /
+
+case $1 in
+  help)
+    peonAstBadParamCount "help" $# 1 2
+
+    for ((i=1; i<=${#HELP_KEY[@]}; i++))
+    do
+      if [[ ${HELP_KEY[$i]} = "$2" ]]
+      then
+        ${HELP_FOO[$i]}
+      fi
+    done
+  ;;
+  dev:help)
+    peonAstBadParamCount "dev:help" $# 1 2
+
+    for ((i=1; i<=${#DEV_HELP_KEY[@]}; i++))
+    do
+      if [[ ${DEV_HELP_KEY[$i]} = "$2" ]]
+      then
+        ${DEV_HELP_FOO[$i]}
+      fi
+    done
+  ;;
+  *)
+esac
 
 # Show footer
   eDone
