@@ -3,7 +3,7 @@
 
 # PEON :
   . "$(dirname $0)/.peon/peon.v.sh"
-  . "$(dirname $0)/.peon/peon.t.sh"
+  . "$PATH_ROOT/peon.t.sh"
 # PEON /
 
 # Show Header
@@ -11,11 +11,13 @@
   eLN
 
 # PEON :
-  . "$(dirname $0)/.peon/peon.f.sh"
+  . "$PATH_ROOT/peon.f.sh"
+  . "$PATH_ROOT/peon.h.sh"
+  . "$PATH_ROOT/peon.d.sh"
 # PEON /
 
 # test for parameters
-  if [ $# -le 0 ] || [ $# -gt 9 ]
+  if [ $# -eq 0 ]
   then
     eBash "help" "showing Peon help."
     eXit 
@@ -51,7 +53,13 @@ case $1 in
     done
   ;;
   *)
-    peonTest
+    for ((i=1; i<=${#CMD_KEY[@]}; i++))
+    do
+      if [[ ${CMD_KEY[$i]} = "$2" ]]
+      then
+        ${CMD_FOO[$i]}
+      fi
+    done    
 esac
 
 # Show footer

@@ -1,52 +1,5 @@
-function peonHelp()
-{
-  eBash "help" "show this help"
-  eBash "help <unit name>" "show help of <unit name>"
-  eBash "help list" "show list of documented units"
-
-  eBash "dev:help <unit name>" "show dev help of <unit name>"
-  eBash "dev:help list" "show list of documented units"
-
-  eXit
-}
-
-function peonHelpUnitsList()
-{
-  eDesc "help <unit name>" ""
-    
-    for ((i=1; i<=${#HELP_KEY[@]}; i++))
-    do
-      echo -e "\t$E_CB<$E_CY" ${HELP_KEY[$i]} "$E_CB>"
-    done
-  eLN
-  eXit
-}
-
-function peonDevHelp()
-{
-  eFoo "peonIncl <include name>" "Include file located in $PATH_INCLUDES (without .sh extension)."
-  eFoo "peonTool <tool name>" "Include file located in $PATH_TOOLS (without .sh extension)."
-  eFoo "peonAstNotFound <filename>" "File not found assertion."
-  eFoo "peonAstBadParamCount \${FUNCNAME[0]} \$# <num>" "Bad function parameter count (fixed value) assertion."
-  eFoo "peonAstBadParamCount \${FUNCNAME[0]} \$# <count min> <count max>" "Bad function parameter count (ranged value) assertion."
-  eFoo "peonAstBadParamValue \${FUNCNAME[0]} \$# <needed value> <current value>" "Bad function parameter value assertion."
-  eXit
-} 
-
-function peonDevHelpUnitsList()
-{
-  eDesc "dev:help <unit name>" ""
-    
-    for ((i=1; i<=${#DEV_HELP_KEY[@]}; i++))
-    do
-      echo -e "\t$E_CB<$E_CY" ${DEV_HELP_KEY[$i]} "$E_CB>"
-    done
-  eLN
-  eXit
-}
-
-
 # peonIncl <filename>
+# include a .sh file localized into .peon/includes
 function peonIncl()
 {
   peonAstBadParamCount $FUNCNAME[0] $# 1
@@ -55,12 +8,15 @@ function peonIncl()
   . "$PATH_INCLUDES/$1.sh"
 }
 
+# peonIncList
+# show a list with success loaded (includes)files 
 function peonInclList()
 {
   eDesc "loaded includes (${#LOADED_INCLUDES[@]})" "${LOADED_INCLUDES[@]}"
 }
 
 # peonTool <filename>
+# include a .sh file localized into .peon/tools
 function peonTool()
 {
   peonAstBadParamCount ${FUNCNAME[0]} $# 1
@@ -69,6 +25,8 @@ function peonTool()
   . "$PATH_TOOLS/$1.sh"
 }
 
+# peonToolList
+# show a list with success loaded (tools)files 
 function peonToolList()
 {
   eDesc "loaded tools (${#LOADED_TOOLS[@]})" "${LOADED_TOOLS[@]}"
@@ -76,6 +34,7 @@ function peonToolList()
 
 
 # peonAstNotFound <funcname> <filename>
+# assert a file not found exception
 function peonAstNotFound()
 {
   case $# in
@@ -90,7 +49,8 @@ function peonAstNotFound()
   esac
 }
 
-# peonAstBadParam <funcname> <current param coun> <needed param count> <needed param max range>
+# peonAstBadParamCount <funcname> <current param coun> <needed param count> <needed param max range>
+# assert a bad parameters count exception
 function peonAstBadParamCount()
 {
   case $# in
@@ -112,6 +72,7 @@ function peonAstBadParamCount()
 }
 
 # peonAstBadParamValue <funcname> <param num> <needed value> <current value>
+# assert a bad parameters value exception
 function peonAstBadParamValue()
 {
   case $# in
@@ -123,6 +84,8 @@ function peonAstBadParamValue()
   esac
 }
 
+# peonRegisterDevHelp <key> <callback>
+# register a dev:help <?> command
 function peonRegisterDevHelp()
 {
   peonAstBadParamCount ${FUNCNAME[0]} $# 2
@@ -130,6 +93,8 @@ function peonRegisterDevHelp()
   DEV_HELP_FOO[ ${#DEV_HELP_FOO[@]} + 1 ]=$2
 }
 
+# peonRegisterHelp <key> <callback>
+# register a help <?> command
 function peonRegisterHelp()
 {
   peonAstBadParamCount ${FUNCNAME[0]} $# 2
@@ -137,17 +102,52 @@ function peonRegisterHelp()
   HELP_FOO[ ${#HELP_FOO[@]} + 1 ]=$2
 }
 
+# peonRegisterCmd <key> <callback>
+# register a command
+function peonRegisterCmd()
+{
+  peonAstBadParamCount ${FUNCNAME[0]} $# 2
+  HELP_KEY[ ${#CMD_KEY[@]} + 1 ]=$1 
+  HELP_FOO[ ${#CMD_FOO[@]} + 1 ]=$2
+}
+
+# peonHelpUnitsList
+# show the units list
+function peonHelpUnitsList()
+{
+  eDesc "help <unit name>" ""
+    
+    for ((i=1; i<=${#HELP_KEY[@]}; i++))
+    do
+      echo -e "\t$E_CB<$E_CY" ${HELP_KEY[$i]} "$E_CB>"
+    done
+  eLN
+  eXit
+}
+peonRegisterHelp "list" "peonHelpUnitsList"
+
+# peonDevHelpUnitsList
+# show the dev unists list
+function peonDevHelpUnitsList()
+{
+  eDesc "dev:help <unit name>" ""
+    
+    for ((i=1; i<=${#DEV_HELP_KEY[@]}; i++))
+    do
+      echo -e "\t$E_CB<$E_CY" ${DEV_HELP_KEY[$i]} "$E_CB>"
+    done
+  eLN
+  eXit
+}
+peonRegisterDevHelp "list" "peonDevHelpUnitsList"
+
+# peonTest
+# show something.
 function peonTest()
 {
   echo -e "$E_CG Me not that kind of Orc !$E_RZ"
   eXit
-}
+} 
+peonRegisterCmd "test" "peonTest"
 
-peonRegisterDevHelp "list" "peonDevHelpUnitsList"
-peonRegisterDevHelp "" "peonDevHelp"
-peonRegisterDevHelp "peon" "peonDevHelp"
-
-peonRegisterHelp "list" "peonHelpUnitsList"
-peonRegisterHelp "" "peonHelp"
-peonRegisterHelp "peon" "peonHelp"
 

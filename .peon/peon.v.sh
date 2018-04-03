@@ -9,6 +9,8 @@ declare -a HELP_KEY=()
 declare -a HELP_FOO=()
 declare -a DEV_HELP_KEY=()
 declare -a DEV_HELP_FOO=()
+declare -a CMD_KEY=()
+declare -a CMD_FOO=()
 
 
 declare -ir VER_MAX_MINOR=99
